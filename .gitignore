@@ -42,3 +42,6 @@
 
 # Local output files
 a.*
+
+compile_commands.json
+.cache
