@@ -20,9 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// This program generates random_func mazes using the Twist-and-Merge algorithm
-// from [1], Algorithm 2. The output is a HTML document containing one maze per
-// page, suitable for printing.
+// This program generates random_func mazes using a variant of the
+// Twist-and-Merge algorithm from [1], Algorithm 2. The output is a HTML
+// document containing one maze per page, suitable for printing.
 //
 // [1]: V. Bellot, M. Cautrès, J-M. Favreau, M. Gonzalez-Thauvin, P. Lafourcade,
 //      K. Le Cornec, B. Mosnier, S. Rivière-Wekstein,
@@ -46,6 +46,23 @@
 //    is a maze that is not only connected, but simply connected: there is
 //    exactly one path connecting any two cells. In other words, the maze is a
 //    tree graph.
+//
+// This program slightly generalizes the Twist & Merge algorithm by introducing
+// 3 parameters, corresponding to these command-line parameters. The original
+// Twise & Merge algorithm can be recovered with specific non-default values:
+//
+//      --weight_straight_path=
+//          Float between 0 and 1. Sets the likelihood of straight paths.
+//              Default 0.25.
+//              Set to 0 to recover the original Twist & Merge algorithm.
+//      --weight_u_turn=
+//          Float between 0 and 1. Sets the likelihood of U-turns.
+//              Default 0.25.
+//              Set to 1 to recover the original Twist & Merge algorithm.
+//      --biased_merge=
+//          Boolean: true or false. Sets the merge strategy.
+//              Default true.
+//              Set to false to recover the original Twist & Merge algorithm.
 //
 // This program is self-contained C++20 using only the standard library. It
 // should simply compile with any compiler, only requiring a compiler flag to
