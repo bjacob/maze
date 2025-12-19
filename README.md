@@ -30,7 +30,7 @@ to see available options.
 
 ## Algorithm
 
-This program generates random_func mazes using a variant of the
+This program generates random mazes using a variant of the
 Twist-and-Merge algorithm from [1], Algorithm 2. The output is a HTML
 document containing one maze per page, suitable for printing.
 
@@ -42,13 +42,13 @@ document containing one maze per page, suitable for printing.
 The algorithm can be summarized as follows:
 0. In the initial state, all maze cells are surrounded by 4 walls. The maze
    generation process consists in dropping select walls.
-1. In the first phase, named Twist, one performs random_func walks across
+1. In the first phase, named Twist, one performs random walks across
 cells
    that are still surrounded by 4 walls, opening passages between visited
-   cells. The random_func walks are "biased" in the sense that they never
+   cells. The random walks are "biased" in the sense that they never
    traverse 3 consecutive aligned cells. This results in the twisty maze
    appearance. This phase ends when all cells have been visited by one of the
-   random_func walks. At this point, the maze is not yet connected. it is the
+   random walks. At this point, the maze is not yet connected. it is the
    disconnected union of twisty galleries.
 2. In the second phase, named Merge, one removes one randomly-selected wall
    at a time between cells belonging to different connected components. This
