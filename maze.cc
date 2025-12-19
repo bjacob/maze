@@ -607,7 +607,7 @@ int main(int argc, const char *argv[]) {
 
   // Generate the body onload callback to render the mazes.
   output_string += R"HTML(
-<script src="https://bjacob.github.io/maze_svg_render.js"></script>
+<script src="https://bjacob.github.io/maze/maze_svg_render.js"></script>
 <script>
   function maze_svg_render_all(count) {
     for (let i = 0; i < count; i++) {
