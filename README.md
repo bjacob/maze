@@ -40,18 +40,23 @@ document containing one maze per page, suitable for printing.
        https://uca.hal.science/hal-03174952/document
 
 The algorithm can be summarized as follows:
+
 0. In the initial state, all maze cells are surrounded by 4 walls. The maze
    generation process consists in dropping select walls.
 1. In the first phase, named Twist, one performs random walks across
 cells
    that are still surrounded by 4 walls, opening passages between visited
-   cells. The random walks are "biased" in the sense that they never
-   traverse 3 consecutive aligned cells. This results in the twisty maze
-   appearance. This phase ends when all cells have been visited by one of the
+   cells. The random walks are "biased" in the sense that we have parametrized
+   preferences for avoiding straight paths and U-turns (see options `--weight_straight_path`
+   and `--weight_u_turn` below).
+   This results in the twisty maze appearance. This phase ends when all cells
+   have been visited by one of the
    random walks. At this point, the maze is not yet connected. it is the
    disconnected union of twisty galleries.
 2. In the second phase, named Merge, one removes one randomly-selected wall
-   at a time between cells belonging to different connected components. This
+   at a time between cells belonging to different connected components. The
+   strategy used to select walls to remove is controlled by the `--biased_merge` option
+   below. This
    phase stops as soon as the maze is connected. Because of that, the result
    is a maze that is not only connected, but simply connected: there is
    exactly one path connecting any two cells. In other words, the maze is a
