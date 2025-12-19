@@ -115,7 +115,7 @@ struct Position {
   int column = 0;
 };
 
-enum Direction { North = 0, South = 1, West = 2, East = 3 };
+enum class Direction { North = 0, South = 1, West = 2, East = 3 };
 
 Position get_neighbour(Position current, Direction direction) {
   switch (direction) {
