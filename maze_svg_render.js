@@ -51,7 +51,6 @@ function maze_svg_render(maze_element, dst_element, cell_size) {
     }
   }
   svg += '</svg>\n'
-  console.log(svg)
   const parser = new DOMParser();
   const doc = parser.parseFromString(svg, 'image/svg+xml');
   const svgImg = doc.querySelector('svg')
