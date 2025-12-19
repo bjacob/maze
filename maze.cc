@@ -634,7 +634,7 @@ int main(int argc, const char *argv[]) {
       output_string += "<br/><div class=\"page-break\"></div><br/>\n";
     }
     output_string += std::format(R"HTML(
-  <div id="render{}" viewBox="0 0 1000 1000"></div><br/>
+  <div id="render{}"></div><br/>
   )HTML",
                                  i);
   }
